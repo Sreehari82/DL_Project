@@ -199,6 +199,8 @@ with tab_3:
             img_resized = resize(img_array, (100, 100, 1))
             img_resized = np.expand_dims(img_resized, axis=0)
 
+
+            model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
             # Make prediction
             prediction = model.predict(img_resized)
             prediction_class = np.argmax(prediction, axis=1)
