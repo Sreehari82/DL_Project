@@ -235,7 +235,7 @@ with tab_3:
             with st.spinner("Initializing webcam..."):
                 with st.spinner("Please wait for 5 seconds to capture the image..."):
                     time.sleep(5)  # Wait for 5 seconds
-                    cap = cv2.VideoCapture(0)
+                    cap = cv2.VideoCapture(1)
                     if not cap.isOpened():
                         st.error("Error: Could not open webcam.")
                     else:
