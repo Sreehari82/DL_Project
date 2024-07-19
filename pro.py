@@ -235,9 +235,14 @@ with tab_3:
             with st.spinner("Initializing webcam..."):
                 with st.spinner("Please wait for 5 seconds to capture the image..."):
                     time.sleep(5)  # Wait for 5 seconds
-                    cap = cv2.VideoCapture(1)
-                    if not cap.isOpened():
-                        st.error("Error: Could not open webcam.")
+                    cap = None
+                    for i in range(5):
+                        cap = cv2.VideoCapture(i)
+                        if cap.isOpened():
+                            print(f"Camera {i} is opened")
+                            break
+                    if cap is None or not cap.isOpened():
+                        print("Cannot open any camera")
                     else:
                         ret, frame = cap.read()
                         if ret:
