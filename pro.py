@@ -11,7 +11,7 @@ import time
 
 # Load your trained model
 def load_model():
-    model = tf.keras.models.load_model('C:\\Users\\God\\PycharmProjects\\pythonProject2\\CNN_Project\\CNN_AI_REAL.h5')
+    model = tf.keras.models.load_model('CNN_AI_REAL.h5')
     return model
 
 model = load_model()
